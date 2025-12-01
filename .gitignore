@@ -1,2 +1,4 @@
 .env
 node_modules
+data/nepal_rivers_for_api.geojson
+data
