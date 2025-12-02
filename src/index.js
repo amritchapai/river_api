@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/database.js";
+import riverRoutes from "./routes/rivers.routes.js";
 
 dotenv.config();
 
@@ -12,6 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 await connectDB();
+
+//river routes
+app.use("/api/rivers", riverRoutes);
 
 app.get("/", (req, res) => {
   res.json({
@@ -34,7 +38,7 @@ app.get("/health", (req, res) => {
 app.use((req, res) => {
   res.status(404).json({
     success: false,
-    error: "endpoint not found",
+    error: "endpoint_not _ound",
     message: `Cannot ${req.method} ${req.originalUrl}`,
   });
 });
