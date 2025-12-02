@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
+    "import-data": "bash extract_rivers.sh && node src/script/importData.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
