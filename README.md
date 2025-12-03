@@ -24,3 +24,38 @@ Find nearest rivers using OpenStreetMap data (Nepal).
 - update .env file taking .env.example as reference
 - for first time and one time setup at very beginning do npm import-data
 - then start server with npm run dev
+
+
+  ## Project Structure
+├── .env
+├── extract_rivers.sh
+├── package.json
+├── package-lock.json
+├── pnpm-lock.yaml
+├── README.md
+├── vitest.config.js
+├── src
+│ ├── app.js
+│ ├── index.js
+│ ├── config
+│ │ └── database.js
+│ ├── controllers
+│ │ └── rivers.controllers.js
+│ ├── data
+│ │ ├── nepal-latest.osm.pbf
+│ │ └── nepal_rivers_for_api.geojson
+│ ├── middleware
+│ │ └── validation.js
+│ ├── models
+│ │ └── river.js
+│ ├── routes
+│ │ └── rivers.routes.js
+│ ├── script
+│ │ └── importData.js
+│ ├── tests
+│ │ ├── distance.test.js
+│ │ ├── nearby-rivers.test.js
+│ │ ├── setup.js
+│ │ └── testData.js
+│ └── utils
+│ └── distance.js
