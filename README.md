@@ -23,6 +23,11 @@ Find nearest rivers using OpenStreetMap data (Nepal).
 - place this file inside `src/data`
 - update .env file taking .env.example as reference
 - for first time and one time setup at very beginning do npm import-data
+      Run the command in a Unix-like terminal, such as:
+      Git Bash (Windows)
+      WSL (Windows Subsystem for Linux)
+      macOS Terminal
+      Linux Terminal
 - then start server with npm run dev
 
 
