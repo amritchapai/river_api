@@ -7,7 +7,11 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "import-data": "bash extract_rivers.sh && node src/script/importData.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest --run",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f river-api"
   },
   "repository": {
     "type": "git",
@@ -28,5 +32,10 @@
     "joi": "^18.0.2",
     "mongoose": "^9.0.0",
     "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.4.0",
+    "supertest": "^7.1.4",
+    "vitest": "^4.0.15"
   }
 }

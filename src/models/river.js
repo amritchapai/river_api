@@ -69,6 +69,6 @@ riverSchema.index({
   "boundingBox.maxLng": 1,
 });
 
-const River = mongoose.model("River", riverSchema);
+const River = mongoose.models.River || mongoose.model("River", riverSchema);
 
 export default River;

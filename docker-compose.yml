@@ -1,0 +1,37 @@
+services:
+  river-api:
+    build: # Build the image using the Dockerfile in the current directory
+      context: . # The build context is the current directory
+      dockerfile: Dockerfile # The name of the Dockerfile (default is Dockerfile)
+    ports:
+      - "5000:5000" # 5000 to 5000
+    environment:
+      # You'll need to set this in your environment or a .env file
+      - MONGODB_URI=${MONGODB_URI}
+      # Add other environment variables if needed
+      # - NODE_ENV=production # Example
+    depends_on:
+      # If you run MongoDB locally with Docker, add it here
+      # - mongodb
+      # If using remote MongoDB, this isn't strictly necessary,
+      # but can be kept if you want to add a local MongoDB service later
+      []
+    volumes:
+      # Mount the src/data directory from the host to the container
+      # This allows the import script to access the .osm.pbf file and write the .geojson file
+      # Make sure the path on the host side exists and contains your data
+      - ./src/data:/app/src/data
+      # Optional: Mount nodemon.json if you use it for hot-reloading in dev
+      # - ./nodemon.json:/app/nodemon.json
+
+  #mongdb service from docker
+  # mongodb:
+  #   image: mongo:latest # Use the latest stable MongoDB image
+  #   ports:
+  #     - "27017:27017" # Map host port 27017 to container port 27017
+  #   volumes:
+  #     - mongodb_data:/data/db # Persist MongoDB data using a named volume
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME} # Use environment variables
+  #     MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD} # Use environment variables
+  #     MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE} # Optional: set the default database

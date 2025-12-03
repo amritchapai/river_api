@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import River from "../models/river.js";
 
 import { fileURLToPath } from "url";
+import { haversineDistance } from "../utils/distance.js";
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -52,25 +53,6 @@ function calculateLength(coordinates) {
   let totalLength = 0;
 
   //haversine distance instead of distance formula
-  const haversineDistance = (coord1, coord2) => {
-    const [lng1, lat1] = coord1;
-    const [lng2, lat2] = coord2;
-
-    const R = 6371;
-    const dLat = ((lat2 - lat1) * Math.PI) / 180;
-    const dLng = ((lng2 - lng1) * Math.PI) / 180;
-
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos((lat1 * Math.PI) / 180) *
-        Math.cos((lat2 * Math.PI) / 180) *
-        Math.sin(dLng / 2) *
-        Math.sin(dLng / 2);
-
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    //returning with meter
-    return R * c * 1000;
-  };
 
   // Handle LineString
   if (Array.isArray(coordinates[0]) && typeof coordinates[0][0] === "number") {
