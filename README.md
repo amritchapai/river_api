@@ -19,7 +19,7 @@ Find nearest rivers using OpenStreetMap data (Nepal).
 - Clone the repository
   git clone 'link'
 - Install required repositories with npm install or pnpm install
-- for data injection download osm.pbf data form ``https://drive.google.com/drive/folders/14Z4lFJTqIZsTvGcAiNUxPymK1PUoyJma` or from here `https://download.geofabrik.de/asia/nepal.html` but remeber the file name should be nepal-latest.osm.pbf
+- for data injection download osm.pbf data form `https://drive.google.com/drive/folders/14Z4lFJTqIZsTvGcAiNUxPymK1PUoyJma` or from here `https://download.geofabrik.de/asia/nepal.html` but remeber the file name should be nepal-latest.osm.pbf
 - place this file inside `src/data`
 - update .env file taking .env.example as reference
 - for first time and one time setup at very beginning do npm import-data
