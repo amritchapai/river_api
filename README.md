@@ -22,12 +22,12 @@ Find nearest rivers using OpenStreetMap data (Nepal).
 - for data injection download osm.pbf data form https://drive.google.com/drive/folders/14Z4lFJTqIZsTvGcAiNUxPymK1PUoyJma or from here https://download.geofabrik.de/asia/nepal.html but remeber the file name should be nepal-latest.osm.pbf
 - place this file inside `src/data`
 - update .env file taking .env.example as reference
-- for first time and one time setup at very beginning do npm import-data
-      Run the command in a Unix-like terminal, such as:
-      Git Bash (Windows)
-      WSL (Windows Subsystem for Linux)
-      macOS Terminal
-      Linux Terminal
+- for first time and one time setup at very beginning do npm import-data   
+      \tRun the command in a Unix-like terminal, such as:  
+      \tGit Bash (Windows)  
+      \tWSL (Windows Subsystem for Linux)  
+      \tmacOS Terminal  
+      \tLinux Terminal  
 - then start server with npm run dev
 
 
